@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scoreList</title>
+    <link rel="stylesheet" href="../public/scoreList.css">
+    <script type="text/javascript" src="../public/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".scores:odd").addClass("odd");
+            $(".scores:even").addClass("even");
+        })
+    </script>
+</head>
+<body>
+    <div id="scoreList">
+        <table  id="scoreTable">
+            <thead>
+                <tr>
+                    <th>学期</th>
+                    <th>课程编码</th>
+                    <th>课程名称</th>
+                    <th>学分</th>
+                    <th>成绩</th>
+                    <th>状态</th>
+                    <th>绩点</th>
+                    <th>入库人</th>
+                    <th>入库时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{each list}}
+                <tr class="scores">
+                    <td>{{$value.term}}</td>
+                    <td>{{$value.courseCode}}</td>
+                    <td>{{$value.courseName}}</td>
+                    <td>{{$value.academicCredit}}</td>
+                    <td>{{$value.score}}</td>
+                    <td>{{$value.status}}</td>
+                    <td>{{$value.gradePoint}}</td>
+                    <td>{{$value.teacher}}</td>
+                    <td>{{$value.importTime}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</body>

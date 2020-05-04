@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+		table{
+			border-collapse: collapse;
+			font-size:12px;
+		}
+		#score_div{
+			text-align:center;
+		}
+		#score_tab{
+			margin:50px auto;
+		}
+        .fontcss{
+            border: black 1px;
+            background-color: #32CD32;
+        }
+        th{
+            border: black 1px solid;
+			width: 80px;
+			height: 50px;
+			background-color:rgb(241,243,244);
+        }
+        td{
+			width: 80px;
+			height: 30px;
+            border: black 1px solid;
+        }
+		
+		
+    </style>
+    <script type="text/javascript" src="../public/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript">
+		$(function(){
+				 function getRandomInt(min, max) { 
+				    return Math.floor(Math.random() * (max - min + 1)) + min; 
+				    }; 
+				var colors=["aliceblue","lemonchiffon","lavenderblush","ghostwhite","darkkhaki","lightpink"]
+				$("td").each(function(){
+					
+					if($(this).attr("colspan")!=""){
+						var randomColorIndex=getRandomInt(0,colors.length-1)
+						$(this).css("background-color",colors[randomColorIndex]);
+					}
+				});
+				
+				
+				$("#week_selector").change(function(){
+					var week_no=$("#week_selector").val().trim();
+					var random_no=$("#random_no").val().trim();
+					window.location.href="http://127.0.0.1:805/schedules?week_no="+week_no+"&random_no="+random_no;
+				});
+				
+				//获取id为select_week元素的内容，根据内容设置select标签的默认值
+				var select_week_text=$("#select_week").html();
+				switch (select_week_text) {
+				    case "第一周":
+						$("#week_1").attr("selected","true")
+				        break;
+					case "第二周":
+						$("#week_2").attr("selected","true")
+					    break;
+					case "第三周":
+						$("#week_3").attr("selected","true")
+					    break;
+					case "第四周":
+						$("#week_4").attr("selected","true")
+					    break;
+					case "第五周":
+						$("#week_5").attr("selected","true")
+					    break;
+					case "第六周":
+						$("#week_6").attr("selected","true")
+					    break;
+					case "第七周":
+						$("#week_7").attr("selected","true")
+					    break;
+					case "第八周":
+						$("#week_8").attr("selected","true")
+					    break;
+					case "第九周":
+						$("#week_9").attr("selected","true")
+					    break;
+					case "第十周":
+						$("#week_10").attr("selected","true")
+					    break;
+					case "第十一周":
+						$("#week_11").attr("selected","true")
+					    break;
+					case "第十二周":
+						$("#week_12").attr("selected","true")
+					    break;
+					case "第十三周":
+						$("#week_13").attr("selected","true")
+					    break;
+					case "第十四周":
+						$("#week_14").attr("selected","true")
+					    break;
+					case "第十五周":
+						$("#week_15").attr("selected","true")
+					    break;
+					case "第十六周":
+						$("#week_16").attr("selected","true")
+					    break;
+					case "第十七周":
+						$("#week_17").attr("selected","true")
+					    break;
+					case "第十八周":
+						$("#week_18").attr("selected","true")
+					    break;
+					case "第十九周":
+						$("#week_19").attr("selected","true")
+					    break;
+					case "第十九周":
+						$("#week_20").attr("selected","true")
+					    break;
+				}
+			
+		});
+	</script>
+</head>
+<body>
+<div id="score_div">
+	<input type="text" id="random_no" value="{{random_no}}" hidden="true">
+	<select id="week_selector">
+	  <option value="week_1" id="week_1">第一周</option>
+	  <option value="week_2" id="week_2">第二周</option>
+	  <option value="week_3" id="week_3">第三周</option>
+	  <option value="week_4" id="week_4">第四周</option>
+	  <option value="week_5" id="week_5">第五周</option>
+	  <option value="week_6" id="week_6">第六周</option>
+	  <option value="week_7" id="week_7">第七周</option>
+	  <option value="week_8" id="week_8">第八周</option>
+	  <option value="week_9" id="week_9">第九周</option>
+	  <option value="week_10" id="week_10">第十周</option>
+	  <option value="week_11" id="week_11">第十一周</option>
+	  <option value="week_12" id="week_12">第十二周</option>
+	  <option value="week_13" id="week_13">第十三周</option>
+	  <option value="week_14" id="week_14">第十四周</option>
+	  <option value="week_15" id="week_15">第十五周</option>
+	  <option value="week_16" id="week_16">第十六周</option>
+	  <option value="week_17" id="week_17">第十七周</option>
+	  <option value="week_18" id="week_18">第十八周</option>
+	  <option value="week_19" id="week_19">第十九周</option>
+	  <option value="week_20" id="week_20">第二十周</option>
+	</select>
+	<table id="score_tab">
+		<thead id="score_head">
+			<tr>
+				<th id="select_week">{{select_week}}</th>
+				<th colspan="2">1-2</th>
+				<th colspan="2">3-4</th>
+				<th>中午</th>
+				<th colspan="2">5-6</th>
+				<th colspan="2">7-8</th>
+				<th colspan="2">9-10</th>
+				<th>11</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				{{each list}}
+					{{include './schedule_list' $value}}
+				{{/each}}
+			
+			
+			
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

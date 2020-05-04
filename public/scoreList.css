@@ -1,0 +1,24 @@
+/*分数表格样式文件*/
+table{
+    text-align: center;
+    margin: auto;
+    border-collapse: collapse;
+}
+td{
+    border: black 1px solid;
+
+}
+th{
+    border: black 1px solid;
+    background-color: rgb(240,240,240);
+    height: 60px;
+}
+.odd{
+    background-color: beige;
+}
+.even{
+    background-color: bisque;
+}
+.scores:hover{
+    background-color:yellow;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			table{
+				text-align: center;
+				margin: 50px auto;
+			}
+			th{
+				background-color:cornflowerblue;
+				width: 100px;
+				height: 40px;
+			}
+			td{
+				width: 100px;
+				height: 28px;
+			}
+			.even{
+				background-color: aliceblue;
+			}
+			.odd{
+				background-color: antiquewhite;
+			}
+			.rooms:hover{
+				background-color: yellow;
+			}
+			#picker_div{
+				text-align: center;
+				margin-top: 30px;
+			}
+		</style>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+		  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+		  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		  <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+		<script type="text/javascript">
+			$(function(){
+				$(".rooms:odd").addClass("odd");
+				$(".rooms:even").addClass("even");
+				$( "#datepicker" ).datepicker();
+				$( "#datepicker" ).datepicker( "option", "dateFormat","yy-mm-dd");
+				$("#queryBtn").click(function(){
+					
+					var building=$("#Content_dllTeachingBuilding").val().trim();
+					var date=$("#datepicker").val().trim();
+					var random_no=$("#random_no").val().trim();
+					window.location.href = "/emptyClassRoom?ctl00$Content$dllTeachingBuilding="+building+"&ctl00$Content$EmptyDate="+date+"&random_no="+random_no;
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="empty_class_room_tab">
+			<input type="hidden" name="" id="random_no" value="{{random_no}}" />
+			<div id="picker_div">
+				<span>
+					<span>教学楼:</span>
+					<select name="ctl00$Content$dllTeachingBuilding" id="Content_dllTeachingBuilding" class="txt_normal">
+						<option selected="selected" value=""></option>
+						<option value="01        "> 教学1楼</option>
+						<option value="02        "> 教学2楼</option>
+						<option value="03        "> 教学3楼</option>
+						<option value="04        "> 教学4楼</option>
+						<option value="05        ">教学5楼</option>
+						<option value="06A       "> 六教A座</option>
+						<option value="06B       "> 六教B座</option>
+						<option value="06C       "> 六教C座</option>
+						<option value="07        ">教学7楼</option>
+						<option value="08        "> 教学8楼</option>
+						<option value="10        "> 教学9楼</option>
+						<option value="E1        "> 东区1教</option>
+						<option value="E2        "> 东区2教</option>
+						<option value="2019000001">环境学院院楼</option>
+						<option value="Y">艺术大楼</option>
+					</select>
+				</span>
+				<span>&nbsp;&nbsp;</span>
+				<span>
+					<span>日期:</span>
+					<input type="text" id="datepicker">
+				</span>
+				<span>&nbsp;&nbsp;</span>
+				<span><button type="button" id="queryBtn">查询</button></span>
+			</div>
+			<table>
+				<thead>
+					<tr>
+						<th>教室编号</th>
+						<th>座位数</th>
+						<th>1-2节</th>
+						<th>3-4节</th>
+						<th>5-6节</th>
+						<th>7-8节</th>
+						<th>9-11节</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{each list}}
+					<tr class="rooms">
+						<td>{{$value.room_no}}</td>
+						<td>{{$value.seats}}</td>
+						<td>{{$value.class_A}}</td>
+						<td>{{$value.class_B}}</td>
+						<td>{{$value.class_C}}</td>
+						<td>{{$value.class_D}}</td>
+						<td>{{$value.class_E}}</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+	<tr>
+		<th class="score_head_col">周一</th>
+		{{each day_1}}
+			<td colspan="{{$value.academic_hour}}">{{$value.class}}</td>
+		{{/each}}
+	</tr>
+	<tr>
+		<th class="score_head_col">周二</th>
+		{{each day_2}}
+			<td colspan="{{$value.academic_hour}}">{{$value.class}}</td>
+		{{/each}}
+	</tr>
+	<tr>
+		<th  class="score_head_col">周三</th>
+		{{each day_3}}
+			<td colspan="{{$value.academic_hour}}">{{$value.class}}</td>
+		{{/each}}
+	</tr>
+	<tr>
+		<th class="score_head_col">周四</th>
+		{{each day_4}}
+			<td colspan="{{$value.academic_hour}}">{{$value.class}}</td>
+		{{/each}}
+	</tr>
+	<tr>
+		<th class="score_head_col">周五</th>
+		{{each day_5}}
+			<td colspan="{{$value.academic_hour}}">{{$value.class}}</td>
+		{{/each}}
+	</tr>
+	<tr>
+		<th class="score_head_col">周六</th>
+		{{each day_6}}
+			<td colspan="{{$value.academic_hour}}">{{$value.class}}</td>
+		{{/each}}
+	</tr>
+	<tr>
+		<th class="score_head_col">周日</th>
+		{{each day_7}}
+			<td colspan="{{$value.academic_hour}}">{{$value.class}}</td>
+		{{/each}}
+	</tr>
