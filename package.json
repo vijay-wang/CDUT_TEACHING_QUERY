@@ -10,14 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "acorn": "^7.1.1",
+    "acorn": "^7.4.1",
     "art-template": "^4.13.2",
-    "body-parser": "^1.19.0",
-    "cheerio": "^1.0.0-rc.3",
+    "body-parser": "^1.19.1",
+    "cheerio": "^1.0.0-rc.10",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.17.2",
     "express-art-template": "^1.0.1",
-    "mysql": "^2.17.1",
-    "request": "^2.88.0"
+    "mysql": "^2.18.1",
+    "request": "^2.88.2"
   }
 }

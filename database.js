@@ -3,9 +3,9 @@ const mysql = require('mysql');
 exports.dbs=(tpl,querydata,callback)=>{
     var connection = mysql.createConnection({
         host     : '127.0.0.1',
-        port     : '3366',
+        port     : '3306',
         user     : 'root',
-        password : '981115438438wwj.',
+        password : 'zxcvbnm',
         database : 'login_query'
     });
 

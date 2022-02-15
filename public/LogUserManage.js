@@ -6,7 +6,7 @@ function UserLogin(userName, pwd) {
     // var signedpwd = hex_md5(user + sign + hex_md5(pwd.trim()));
 
     var data = {userName: user, pwd: pwd};
-    var url = "http://127.0.0.1:805/login";
+    var url = "http://127.0.0.1:8090/login";
 	
     $.post(url, data, function (rs) {
         //alert(rs);

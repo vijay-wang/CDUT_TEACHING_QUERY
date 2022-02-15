@@ -24,7 +24,7 @@ app.use(require('cors')());
 
 app.use(router);
 //监听3000端口
-app.listen(805,"127.0.0.1",()=>{
+app.listen(8090,"127.0.0.1",()=>{
     console.log("running...");
 });
 

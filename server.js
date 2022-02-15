@@ -37,7 +37,7 @@ function simulatedLogin_1(req,res){
 	const postData =querystring.stringify(data);
 	console.log(postData);
 	const options = {
-		host: '202.115.133.173',
+		host: 'jwxtxs.cdut.edu.cn',
 		port: 805,
 		path: '/Common/Handler/UserLogin.ashx',
 		method: 'POST',
@@ -99,7 +99,7 @@ function simulatedLogin(req,res){
 	const postData =querystring.stringify(data);
 	console.log(postData);
 	const options = {
-		host: '202.115.133.173',
+		host: 'jwxtxs.cdut.edu.cn',
 		port: 805,
 		path: '/Common/Handler/UserLogin.ashx',
 		method: 'POST',
@@ -114,7 +114,10 @@ function simulatedLogin(req,res){
 		console.log(`响应头: ${JSON.stringify(res_server.headers)}`);
 		res_server.setEncoding('utf8');
 		res_server.on('data', (chunk) => {
+			console.log("+++++++++++++++++++++++++");
 			if (chunk==0){
+				console.log("{{{{{{{{{{{{{{{{{{{{{{{{{{");
+
 				var stu_no=getStuNo();
 				
 				
@@ -141,9 +144,10 @@ function simulatedLogin(req,res){
 				});
 				res.send({stateCode:"0",stu_no:stu_no});
 			}else{
+				console.log("//////////////////////////////");
 				//=====================此处应该判断返回值是否为零，并做处理，
 				//登陆失败会造成服务器崩溃
-				res.send(chunk);
+		//		res.send(chunk);
 				return;
 			}
 			console.log("chunk:" + chunk);
@@ -151,7 +155,7 @@ function simulatedLogin(req,res){
 		});
 		res_server.on('end', () => {
 			console.log('响应中已无数据');
-			//console.log("chunk:"+chunk);
+		//	console.log("chunk:"+chunk);
 		});
 	});
 	reqLogin.on('error', (e) => {
@@ -194,7 +198,7 @@ exports.score=(req,res)=>{
 			return;
 		}else{
 			request({
-			    url:"http://202.115.133.173:805/SearchInfo/Score/ScoreList.aspx ",
+			    url:"http://jwxtxs.cdut.edu.cn:805/SearchInfo/Score/ScoreList.aspx ",
 			    method: "POST",
 			    headers: {
 			        'Content-Type':'application/x-www-form-urlencoded',
@@ -243,7 +247,7 @@ function getScheduleInfo(req,res){
 			return;
 		} else{
 			request({
-			    url:"http://202.115.133.173:805/Classroom/ProductionSchedule/StuProductionSchedule.aspx?termid=201902&stuID="+results[0].name,
+			    url:"http://jwxtxs.cdut.edu.cn:805/Classroom/ProductionSchedule/StuProductionSchedule.aspx?termid=201902&stuID="+results[0].name,
 			    method: "POST",
 			    headers: {
 			        'Content-Type':'application/x-www-form-urlencoded',
@@ -618,7 +622,7 @@ function getEmptyRoomInfo(req,res,tpl,data,postData){
 			return;
 	    } else{
 	    	const options = {
-	    	    host: '202.115.133.173',
+	    	    host: 'jwxtxs.cdut.edu.cn',
 	    	    port: 805,
 	    	    path: '/SearchInfo/Building/EmptyClassRoom.aspx',
 	    	    method: 'POST',
