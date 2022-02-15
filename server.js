@@ -99,7 +99,7 @@ function simulatedLogin(req,res){
 	const postData =querystring.stringify(data);
 	console.log(postData);
 	const options = {
-		host: 'jwxtxs.cdut.edu.cn',
+		host: '202.115.137.77',
 		port: 805,
 		path: '/Common/Handler/UserLogin.ashx',
 		method: 'POST',
@@ -147,7 +147,7 @@ function simulatedLogin(req,res){
 				console.log("//////////////////////////////");
 				//=====================此处应该判断返回值是否为零，并做处理，
 				//登陆失败会造成服务器崩溃
-		//		res.send(chunk);
+				res.send(chunk);
 				return;
 			}
 			console.log("chunk:" + chunk);
