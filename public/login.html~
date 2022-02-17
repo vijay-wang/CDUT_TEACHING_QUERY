@@ -49,6 +49,7 @@
     <script type="text/javascript">
         $(function () {
             $("#login_btn").click(function () {
+		alert(pressKey());
                 UserLogin($("#user").val(),$("#pwd").val())
             });
         })

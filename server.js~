@@ -102,7 +102,7 @@ function simulatedLogin(req,res){
 	const options = {
 		host: 'jwxtxs.cdut.edu.cn',
 		port: 805,
-		path: '/Common/Handler/UserLogin.ashx?lCVWpByE=52BorFqTgTNO4pLOqhmKIzmZ4MpnzSELUYPTyzLzmV63_pC1U50wuQVsoEBLAyyfzuJYPSGI0KWCtS84jdJueZfy0bNOLOB9QgVDUAlvfiGsPDTUiewJOyeA0esZD7Fn8XBVmUtOz1z19B3vzQoPJPs3yWdJ_AUuL4ofb8HD.hpbY3tyML4xBO2ON9AKf4G6ztdDCmIlG6LvjnY1HSi.SlP..ckfAI3oJHPcVt71np5Gde6bC9G7jetjR_w6.7O7926UBaHsMt_kah3NXNVS9LHVEEb3_xgPfXOHo2mHr_qKvnwdFVlW7fK6OFTyOUco_W_230O3axW2Qq4kn2pzvjIIewyZBCrYFBz9FHqgWDZ9NRBKW_BCTPNp.Hjq9D26m',
+		path: '/Common/Handler/UserLogin.ashx',
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/x-www-form-urlencoded',
